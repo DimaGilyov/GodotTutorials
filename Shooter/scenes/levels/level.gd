@@ -13,3 +13,22 @@ func _process(delta):
 	
 func test_function():
 	print("test_function")
+
+
+
+func _on_gate_player_entered_gate(body):
+	print("_on_gate_player_entered_gate") 
+	print(body)
+
+
+func _on_gate_player_exited_gate(body):
+	print("_on_gate_player_exited_gate") 
+	print(body)
+
+
+func _on_player_laser_shoted():
+	print("_on_player_laser_shoted") 
+
+
+func _on_player_granat_shoted():
+	print("_on_player_granat_shoted")
