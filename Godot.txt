@@ -1,0 +1,61 @@
+Убрать размытие
+- Project -> Project Settings -> Texture > Default Texture Filter -> Nearest
+
+При копировании сцены что бы копия не ссылалась на оригинал (И можно было менять без внесения изменений в оригинал) нажать правой кнопокй на сцену и Make Local
+ -----------------------------------------------
+
+Создание сцены
+
+ - Для создания сцены создается Node2d, это корневой элемент
+ - Для того что бы убрать размытие у ассетов pixelart нужно картинку закинуть на сцену и зайти в Inspector -> Texture -> Filter -> Nearest
+ - Для создания скрипта необъодимо выделить ноду и нажать на копнку скрипт.
+ - Для того что бы обработать событие НАЖАТИЕ КНПОКИ. Нужно нажать на ноду Button и в свойстав Node перейти в Signal и выбрать pressed
+    Signal нужно крепить к скрипту 
+   
+ - Для смены сцены
+ -----------------------------------------------
+func _on_start_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
+ -----------------------------------------------	
+ 
+ 
+ 
+Создание фона Paralax
+ - Делаем отдельную сценту 
+ - Корневой элемент ParalaxBackground
+ - В ParalaxBackground создаем ParalaxLayer
+ - В ParalaxLayer в Inspector -> Motion -> Mirror (Обычно выставляются границы по размеру экрана)
+ - Далее накидываем скрипт на ParalaxBackground:
+ -----------------------------------------------
+   extends ParallaxBackground
+
+
+    var speed = 200
+    
+    func _process(delta):
+    	scroll_offset.y += speed * delta;
+ -----------------------------------------------
+ 
+ Создание персонажа
+  - корневой элемент CharachterBody2d
+  - Для CharachterBody2d обязательно создаем дочернюю ноту ColisionShape2D
+  - Для ColisionShape2D в Inspector нужно определить форму
+  - Для CharachterBody2d создаем AnimatedSprite2D, в Inspector -> SpriteFrames открывается меню с анимациями
+  - Для добавления анимаций в меню анимаций нужно создать анимацию и нажать кнопку Add frames from sprite sheet
+  - В анимации есть Looping что бы зациклить анимацию
+  - Для того что бы анимация была по дефолту нужно нажать кнопку auto play on load
+  
+  - Скрипт для персонажа (можно создать дефолтный)
+  
+  
+ -----------------------------------------------
+ 
+ 
+ 
+ Полноэкранный режим
+ - Project -> Project Settings -> Windows -> Size -> Mode -> Exclusive Fullscrene
+ - Project -> Project Settings -> Windows -> Size -> Resizeble (Стояла галочка)
+ - Project -> Project Settings -> Windows -> Strech -> Mode -> canvas_items
+ 
+  
+  
