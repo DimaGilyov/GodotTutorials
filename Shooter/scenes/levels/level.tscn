@@ -1,23 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3wuowo15flkg"]
+[gd_scene load_steps=3 format=3 uid="uid://c3wuowo15flkg"]
 
-[ext_resource type="PackedScene" uid="uid://dmt37c62rlctk" path="res://scenes/players/player.tscn" id="1_habhk"]
 [ext_resource type="Texture2D" uid="uid://dufnwnivopiht" path="res://icon.svg" id="1_hbuon"]
-[ext_resource type="Texture2D" uid="uid://s862ynamib3u" path="res://graphics/car/main.png" id="2_0blao"]
-[ext_resource type="PackedScene" uid="uid://cwxjqad06oe74" path="res://scenes/objects/bed.tscn" id="4_cesuy"]
+[ext_resource type="Script" path="res://scenes/levels/Logo.gd" id="2_bagmw"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(543, 227)
 texture = ExtResource("1_hbuon")
 region_rect = Rect2(-68.7934, -56.1983, 154.545, 143.802)
-
-[node name="Car" type="Sprite2D" parent="Logo"]
-position = Vector2(315, 40)
-texture = ExtResource("2_0blao")
-
-[node name="Player" parent="." instance=ExtResource("1_habhk")]
-position = Vector2(312, 439)
-
-[node name="Bed" parent="." instance=ExtResource("4_cesuy")]
-position = Vector2(1425, 616)
+script = ExtResource("2_bagmw")
