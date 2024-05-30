@@ -5,11 +5,6 @@ var test_array: Array[String] = ["Test", "Hello", "Baba"]
 func _ready():
 	$Logo.rotation_degrees = 90
 	
-	for i in test_array:
-		print(i)
-		
-	print(test_array[0])
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +14,6 @@ func _process(delta):
 	if $Logo.pos.x > 1000:
 		print("Position exceeded")
 		$Logo.pos.x = 0
-	var left_pressed = Input.is_action_pressed("left")
 	
-	
+func test_function():
+	print("test_function")

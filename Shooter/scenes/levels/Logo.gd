@@ -8,13 +8,10 @@ var test_scale: int = 1
 func _ready():
 	pos = Vector2(300, 200)
 	position = pos
-	
-	#var test_rotation = 45
-	#rotation_degrees = test_rotation
-	
 	scale = Vector2(test_scale, test_scale)
 	print("Logo is ready")
-
+	print($"..".test_array)
+	$"..".test_function()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pos.x += speed * delta
