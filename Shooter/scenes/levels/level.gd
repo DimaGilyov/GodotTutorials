@@ -19,3 +19,6 @@ func _process(delta):
 	if $Logo.pos.x > 1000:
 		print("Position exceeded")
 		$Logo.pos.x = 0
+	var left_pressed = Input.is_action_pressed("left")
+	
+	
