@@ -26,14 +26,16 @@ func _on_gate_player_exited_gate(body):
 	print("_on_gate_player_exited_gate") 
 	print(body)
 
-
-func _on_player_laser_shoted(laser_marker: Marker2D):
-	var laser = laser_scene.instantiate()
+func _on_player_laser_shoted(laser_marker: Marker2D, direction: Vector2):
+	var laser = laser_scene.instantiate() as Area2D
 	laser.position = laser_marker.global_position
+	laser.direction = direction
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	$Projectiles.add_child(laser)
 
 
-func _on_player_grenade_shoted(grenade_marker: Marker2D):
-	var grenade = grenade_scene.instantiate()
+func _on_player_grenade_shoted(grenade_marker: Marker2D, direction: Vector2):
+	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = grenade_marker.global_position
+	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
