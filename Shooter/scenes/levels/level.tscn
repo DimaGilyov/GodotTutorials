@@ -91,7 +91,7 @@ layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -8, 65536, 0, -9, 65536, 0, -10, 0, 0, -65531, 0, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, -65527, 131072, 1, 9, 0, 2, 65545, 0, 2, 131081, 0, 2, 196617, 131072, 2, 196616, 0, 0)
 
 [node name="House" parent="Ground" instance=ExtResource("10_kwffo")]
-position = Vector2(-381, 3153)
+position = Vector2(-223, 3836)
 rotation = -2.57262
 
 [node name="SteamVent" parent="Ground" instance=ExtResource("11_34p4w")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmt37c62rlctk"]
+[gd_scene load_steps=9 format=3 uid="uid://dmt37c62rlctk"]
 
 [ext_resource type="Script" path="res://scenes/players/player.gd" id="1_fx5r1"]
 [ext_resource type="Texture2D" uid="uid://vrpfvfiogl0v" path="res://graphics/player/player.png" id="1_pche0"]
@@ -24,6 +24,9 @@ scale_min = 0.3
 scale_max = 0.8
 color = Color(0.219608, 1, 1, 0.392157)
 color_ramp = SubResource("GradientTexture1D_c4c2r")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gmanv"]
+polygon = PackedVector2Array(32, -56, 40, -48, 48, -32, 56, -32, 64, -24, 80, -16, 88, -8, 96, -8, 112, 0, 120, 0, 128, 8, 136, 16, 128, 24, 120, 32, 112, 32, 104, 40, 96, 48, 96, 48, 64, 48, 56, 40, 48, 40, 32, 40, 16, 48, -8, 56, -24, 56, -32, 48, -40, 32, -48, 24, -56, 16, -64, -8, -56, -16, -56, -24, -48, -40, -40, -48, -8, -56, 24, -56)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -62,6 +65,9 @@ position = Vector2(128, 12)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(127, 27)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_gmanv")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
