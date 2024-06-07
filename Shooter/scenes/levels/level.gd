@@ -18,8 +18,8 @@ func test_function():
 
 
 func _on_gate_player_entered_gate(body):
-	print("_on_gate_player_entered_gate") 
-	print(body)
+	var tween = create_tween()
+	tween.tween_property($Player, "speed", 0, 0.5)
 
 
 func _on_gate_player_exited_gate(body):
@@ -39,3 +39,13 @@ func _on_player_grenade_shoted(grenade_marker: Marker2D, direction: Vector2):
 	grenade.position = grenade_marker.global_position
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+
+
+func _on_house_player_entered():
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)
+
+
+func _on_house_player_exited():
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.5, 0.5), 1)

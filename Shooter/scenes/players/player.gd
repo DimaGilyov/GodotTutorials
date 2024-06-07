@@ -9,6 +9,10 @@ signal grenade_shoted(grenade_marker: Marker2D, direction: Vector2)
 var can_laser: bool = true
 var can_grenade: bool = true
 
+
+@export var max_speed: int = 500
+var speed: int  = max_speed
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * 500
+	velocity = direction * speed
 	move_and_slide()
 
 	look_at(get_global_mouse_position())
