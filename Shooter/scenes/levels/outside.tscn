@@ -103,6 +103,9 @@ position = Vector2(-905, 2114)
 autoplay = "default"
 frame_progress = 0.451587
 
+[node name="Player" parent="." index="2"]
+position = Vector2(393, 83)
+
 [node name="Gate" parent="." index="3" instance=ExtResource("2_tpmrn")]
 position = Vector2(333, -763)
 
