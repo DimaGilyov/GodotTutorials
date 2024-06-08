@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbahuuoo3imvj"]
+
+[ext_resource type="PackedScene" uid="uid://bfjbha55st3j7" path="res://scenes/container/item_container.tscn" id="1_2skfm"]
+[ext_resource type="Texture2D" uid="uid://btav6b1jybf2" path="res://graphics/objects/toilet.png" id="2_ikhqa"]
+[ext_resource type="Script" path="res://scenes/container/toilet.gd" id="2_l4eb1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7n8e"]
+radius = 94.0213
+
+[node name="Toilet" instance=ExtResource("1_2skfm")]
+script = ExtResource("2_l4eb1")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ikhqa")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_l7n8e")

@@ -1,4 +1,5 @@
 extends Node2D
+class_name LevelParent
 
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
@@ -14,17 +15,6 @@ func _process(delta):
 	
 func test_function():
 	print("test_function")
-
-
-
-func _on_gate_player_entered_gate(body):
-	var tween = create_tween()
-	tween.tween_property($Player, "speed", 0, 0.5)
-
-
-func _on_gate_player_exited_gate(body):
-	print("_on_gate_player_exited_gate") 
-	print(body)
 
 func _on_player_laser_shoted(laser_marker: Marker2D, direction: Vector2):
 	var laser = laser_scene.instantiate() as Area2D
