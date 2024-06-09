@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 signal laser_shoted(laser_marker: Marker2D, direction: Vector2)
 signal grenade_shoted(grenade_marker: Marker2D, direction: Vector2)
-signal update_stats
 
 @onready var laser_timer = $LaserTimer
 @onready var grenade_timer = $GrenadeTimer
@@ -54,12 +53,3 @@ func _on_laser_timer_timeout():
 func _on_grenade_timer_timeout():
 	can_grenade = true
 	
-func add_item(type: String) -> void:
-	if type == "laser":
-		Globals.lasers_amount += 5
-	elif type == "grenade":
-		Globals.grenade_amount += 5
-		pass
-	elif type == "health":
-		pass
-	update_stats.emit()
