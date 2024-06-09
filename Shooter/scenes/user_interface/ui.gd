@@ -3,6 +3,11 @@ extends CanvasLayer
 @onready var laser_label: Label = $LaserCounter/VBoxContainer/Label
 @onready var grenade_label: Label = $GrenadeCounter/VBoxContainer/Label
 
+
+func _ready():
+	laser_label.text = str(Globals.lasers_amount)
+	grenade_label.text = str(Globals.grenade_amount)
+	
 func update_laser_text():
 	laser_label.text = str(Globals.lasers_amount)
 
