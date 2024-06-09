@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qy0cvri4wg2f"]
+[gd_scene load_steps=14 format=3 uid="uid://qy0cvri4wg2f"]
 
 [ext_resource type="PackedScene" uid="uid://c3wuowo15flkg" path="res://scenes/levels/level.tscn" id="1_ck1pd"]
 [ext_resource type="Texture2D" uid="uid://bltloqrdgixek" path="res://graphics/ground/dirt.png" id="2_0tvrk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bksckr8kmjgu5" path="res://graphics/lights/overlays/hole.png" id="6_fnwwe"]
 [ext_resource type="Texture2D" uid="uid://by801kphcm8ac" path="res://graphics/lights/textures/circle.png" id="6_p6vkb"]
 [ext_resource type="Texture2D" uid="uid://cfu0b46rhhpk2" path="res://graphics/lights/overlays/lattice.png" id="7_iijxk"]
+[ext_resource type="PackedScene" uid="uid://cqokugfa6xn3l" path="res://scenes/items/item.tscn" id="12_82j55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf15e"]
 size = Vector2(248.5, 748)
@@ -91,5 +92,8 @@ blend_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(4540.75, 383)
 shape = SubResource("RectangleShape2D_cf15e")
+
+[node name="Item" parent="." index="6" instance=ExtResource("12_82j55")]
+position = Vector2(2917, 1416)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
