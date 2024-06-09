@@ -5,8 +5,8 @@ extends CanvasLayer
 
 
 func _ready():
-	laser_label.text = str(Globals.lasers_amount)
-	grenade_label.text = str(Globals.grenade_amount)
+	update_laser_text()
+	update_grenade_text()
 	
 func update_laser_text():
 	laser_label.text = str(Globals.lasers_amount)
