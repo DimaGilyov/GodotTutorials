@@ -13,7 +13,9 @@ func _ready():
 func _on_container_opened(pos, direction):
 	var item = item_scene.instantiate()
 	item.position = pos
-	$Items.add_child(item)
+	item.direction = direction
+	
+	$Items.call_deferred("add_child", item)
 
 func _process(delta):
 	pass
