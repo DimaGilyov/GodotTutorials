@@ -29,12 +29,10 @@ func _on_player_laser_shoted(laser_marker: Marker2D, direction: Vector2):
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	$Projectiles.add_child(laser)
-	$UI.update_laser_text()
 
 func _on_player_grenade_shoted(grenade_marker: Marker2D, direction: Vector2):
 	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = grenade_marker.global_position
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
-	$UI.update_grenade_text()
 
