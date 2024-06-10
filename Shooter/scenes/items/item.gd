@@ -16,7 +16,7 @@ func _process(delta):
 	rotation += rotation_speed * delta
 
 
-func _on_body_entered(body):
+func _on_body_entered(body):	
 	if type == "laser":
 		Globals.lasers_amount += 5
 	elif type == "grenade":

@@ -50,12 +50,26 @@ position = Vector2(-555, -2073)
 position = Vector2(-2073, -912)
 rotation = -1.5708
 
-[node name="Player" parent="." index="2"]
+[node name="Player" parent="." index="3"]
 position = Vector2(3773, 386)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="7"]
 texture = ExtResource("6_p6vkb")
 texture_scale = 3.0
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+color = Color(0.190297, 0.163363, 0.147105, 1)
+energy = 2.14
+blend_mode = 1
+
+[node name="ExitGateArea" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
+position = Vector2(4540.75, 383)
+shape = SubResource("RectangleShape2D_cf15e")
+
+[node name="Item" parent="." index="6" instance=ExtResource("12_82j55")]
+position = Vector2(2917, 1416)
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_t700a")]
 autoplay = "default"
@@ -81,19 +95,5 @@ modulate = Color(0.663393, 0.33693, 0.49802, 0.203922)
 position = Vector2(1113.75, -1435.75)
 scale = Vector2(3.21096, 3.56748)
 texture = ExtResource("7_iijxk")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-color = Color(0.190297, 0.163363, 0.147105, 1)
-energy = 2.14
-blend_mode = 1
-
-[node name="ExitGateArea" type="Area2D" parent="." index="5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
-position = Vector2(4540.75, 383)
-shape = SubResource("RectangleShape2D_cf15e")
-
-[node name="Item" parent="." index="6" instance=ExtResource("12_82j55")]
-position = Vector2(2917, 1416)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

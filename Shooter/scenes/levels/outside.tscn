@@ -57,7 +57,7 @@ script = ExtResource("2_w1yl5")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
-position = Vector2(1272, 584)
+position = Vector2(1544, 721)
 texture = ExtResource("2_5c5c0")
 region_enabled = true
 region_rect = Rect2(-5422.7, -3068.13, 16000, 10000)
@@ -104,17 +104,18 @@ position = Vector2(-905, 2114)
 autoplay = "default"
 frame_progress = 0.451587
 
-[node name="Player" parent="." index="2"]
-position = Vector2(393, 83)
+[node name="Toilet" parent="." index="1" instance=ExtResource("15_iicc3")]
+position = Vector2(1113, 342)
+rotation = -1.5708
 
-[node name="Gate" parent="." index="3" instance=ExtResource("2_tpmrn")]
+[node name="Crate" parent="." index="2" instance=ExtResource("16_aekx1")]
+position = Vector2(463, 430)
+
+[node name="Gate" parent="." index="5" instance=ExtResource("2_tpmrn")]
 position = Vector2(333, -763)
 
-[node name="Toilet" parent="." index="4" instance=ExtResource("15_iicc3")]
-position = Vector2(802, 802)
-
-[node name="Crate" parent="." index="5" instance=ExtResource("16_aekx1")]
-position = Vector2(1314, 529)
+[node name="Player" parent="." index="6"]
+position = Vector2(393, 83)
 
 [node name="Item" parent="." index="7" instance=ExtResource("17_fpbqd")]
 position = Vector2(-57, 121)

@@ -11,13 +11,27 @@ size = Vector2(400, 173)
 [node name="Crate" instance=ExtResource("1_exxhn")]
 script = ExtResource("2_ckx43")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="BaseSprite" parent="." index="0"]
 texture = ExtResource("2_54unl")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." index="1"]
-position = Vector2(4, 19)
+[node name="LidSprite" parent="." index="1"]
+position = Vector2(3, 21)
 texture = ExtResource("3_dlyoe")
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_oyuo2")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPositions" index="1"]
+position = Vector2(-120, -34)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPositions" index="2"]
+position = Vector2(-117, 29)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPositions" index="3"]
+position = Vector2(115, -38)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPositions" index="4"]
+position = Vector2(115, 28)

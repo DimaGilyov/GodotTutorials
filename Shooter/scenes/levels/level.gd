@@ -3,13 +3,18 @@ class_name LevelParent
 
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
-# Called when the node enters the scene tree for the first time.
+var item_scene: PackedScene = preload("res://scenes/items/item.tscn")
+
 func _ready():
-	pass
+	for container in get_tree().get_nodes_in_group("Container"):
+		container.connect("open", _on_container_opened)
 	
 
+func _on_container_opened(pos, direction):
+	var item = item_scene.instantiate()
+	item.position = pos
+	$Items.add_child(item)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
