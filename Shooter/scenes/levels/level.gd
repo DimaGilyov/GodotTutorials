@@ -38,11 +38,3 @@ func _on_player_grenade_shoted(grenade_marker: Marker2D, direction: Vector2):
 	$Projectiles.add_child(grenade)
 	$UI.update_grenade_text()
 
-func _on_house_player_entered():
-	var tween = get_tree().create_tween()
-	tween.tween_property($Player/Camera2D, "zoom", Vector2(1, 1), 1)
-
-
-func _on_house_player_exited():
-	var tween = get_tree().create_tween()
-	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.5, 0.5), 1)
