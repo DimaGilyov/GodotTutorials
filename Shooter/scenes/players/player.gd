@@ -47,7 +47,9 @@ func _process(_delta):
 		var player_direction = (get_global_mouse_position() - position).normalized()
 		grenade_shoted.emit(selected_marker, player_direction)
 
-
+func hit():
+	pass
+	
 func _on_laser_timer_timeout():
 	can_laser = true 
 

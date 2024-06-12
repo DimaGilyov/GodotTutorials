@@ -18,6 +18,10 @@ func _process(_delta):
 			can_laser = false
 			$LaserColdown.start()
 
+
+func hit():
+	pass
+	
 func _on_attack_area_body_entered(body):
 	players_nearby = true
 
