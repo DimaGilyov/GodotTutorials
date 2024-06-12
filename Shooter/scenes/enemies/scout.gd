@@ -6,6 +6,9 @@ var players_nearby: bool = false
 var can_laser: bool = true
 var right_gun_use: bool = true
 
+var health: int  = 30
+var vulnerable: bool = true
+
 func _process(_delta):
 	if players_nearby:
 		look_at(Globals.player_pos)
@@ -16,11 +19,16 @@ func _process(_delta):
 			var direction: Vector2 = (Globals.player_pos - position).normalized()
 			laser.emit(pos, direction)
 			can_laser = false
-			$LaserColdown.start()
+			$Timers/LaserTimer.start()
 
 
 func hit():
-	pass
+	if vulnerable:
+		health -= 10
+		vulnerable = false
+		$Timers/HitTimer.start()
+	if health <= 0:
+			queue_free()
 	
 func _on_attack_area_body_entered(body):
 	players_nearby = true
@@ -30,5 +38,8 @@ func _on_attack_area_body_exited(body):
 	players_nearby = false
 
 
-func _on_laser_coldown_timeout():
+func _on_laser_timer_timeout():
 	can_laser = true
+
+func _on_hit_timer_timeout():
+	vulnerable = true

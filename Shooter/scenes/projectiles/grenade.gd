@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if explosion_activate:
-		explosion_activate = not explosion_activate
+		#explosion_activate = not explosion_activate
 		var targets = get_tree().get_nodes_in_group("Container") + get_tree().get_nodes_in_group("Entity")
 		for target in targets:
 			var in_range = target.global_position.distance_to(global_position) < explosion_radius
