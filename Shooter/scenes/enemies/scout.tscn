@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://eewfsl6hixac"]
+
+[ext_resource type="Texture2D" uid="uid://3f4spe6hlqud" path="res://graphics/enemies/scout.png" id="1_icjgn"]
+[ext_resource type="Script" path="res://scenes/enemies/scout.gd" id="1_j5q6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf7x5"]
+radius = 50.6952
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7btxv"]
+radius = 936.034
+
+[node name="Scout" type="CharacterBody2D" groups=["Scouts"]]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("1_j5q6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(43, 27)
+rotation = 1.5708
+texture = ExtResource("1_icjgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mf7x5")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_7btxv")
+
+[node name="LaserSpawnPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserSpawnPositions"]
+position = Vector2(121, 13)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions"]
+position = Vector2(116, -29)
+
+[node name="LaserColdown" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="LaserColdown" to="." method="_on_laser_coldown_timeout"]
