@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://eewfsl6hixac"]
+[gd_scene load_steps=7 format=3 uid="uid://eewfsl6hixac"]
 
 [ext_resource type="Texture2D" uid="uid://3f4spe6hlqud" path="res://graphics/enemies/scout.png" id="1_icjgn"]
 [ext_resource type="Script" path="res://scenes/enemies/scout.gd" id="1_j5q6g"]
+[ext_resource type="Shader" path="res://scenes/enemies/scout.gdshader" id="2_jrlxo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l388q"]
+shader = ExtResource("2_jrlxo")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mf7x5"]
 radius = 50.6952
@@ -15,14 +21,17 @@ collision_mask = 11
 script = ExtResource("1_j5q6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l388q")
 position = Vector2(43, 27)
 rotation = 1.5708
 texture = ExtResource("1_icjgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_mf7x5")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
