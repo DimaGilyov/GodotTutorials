@@ -192,7 +192,7 @@ blend_mode = 1
 position = Vector2(4540.75, 383)
 shape = SubResource("RectangleShape2D_cf15e")
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 position = Vector2(3773, 386)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="7"]

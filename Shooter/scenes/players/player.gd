@@ -48,7 +48,7 @@ func _process(_delta):
 		grenade_shoted.emit(selected_marker, player_direction)
 
 func hit():
-	pass
+	Globals.health -= 10
 	
 func _on_laser_timer_timeout():
 	can_laser = true 
